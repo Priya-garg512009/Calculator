@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ui {
+  background-color: white;
+  width:420px;
+  height:370px;
+  border-style:groove;
+  border-width:1px;
+  padding:10px;
+}
+
+.numBtn {
+  border-style:groove;
+  border-color:#aba6a6;
+  border-width:1px;
+  color:black;
+  background-color:#e8e3e3;
+  width: 100px;
+  height: 60px;
+} 
+.opBtn {
+  background-color:#e05f1d;
+  color:white;
+  font-size:24px;
+  width: 100px;
+  height: 60px;
+}
+.calBtn {
+  border-style:none;
+  background-color:#f7dfd2;
+  color:white;
+  font-size:24px;
+  width:100px;;
+  height:250px;
+} 
+.clrBtn {
+border-style:groove;
+  border-color:#aba6a6;
+  border-width:1px;
+  background-color:#e8e3e3;
+  color:black;
+  font-size:18px;
+  width: 100px;
+  height: 60px;
+} 
+.numtxt
+{
+  border-width:1px;
+  background-color:white;
+  border-color:#e05f1d;
+  color:black;
+  font-size:14;
+  height: 40px;
+  width:403px;
+  text-align:right;}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $(".numBtn").click(function(){
+	var value1 = $( this ).val();
+	var value2 = $( "#input" ).val();
+    $( "#input" ).val( value2+value1);
+  });
+  
+  $(".clrBtn").click(function(){
+	$( "#input" ).val("");
+  });
+  
+  $(".opBtn").click(function(){
+	var value1 = $( this ).val();
+	var value2 = $( "#input" ).val();
+    $( "#input" ).val( value2+value1);
+  });
+	$(".calBtn").click(function(){
+		var value2 = eval($( "#input" ).val());
+		$( "#input" ).val( value2);
+	  });
+});
+</script>
+</head>
+<body style="font-family:arial"> 
+<div class="ui" align="center"> 
+<table>
+<tr>
+<td colspan="4"><input type="text" class="numtxt" id="input"></td>
+</tr>
+<tr>
+<td><button class="opBtn" value="+">+</button></td>
+<td><button class="opBtn" value="-">-</button></td>
+<td><button class="opBtn" value="*">*</button></td>
+<td><button class="opBtn" value="/">/</button></td>
+</tr>
+<tr>
+<td><button class="numBtn" value="7">7</button></td>
+<td><button class="numBtn" value="8">8</button></td>
+<td><button class="numBtn" value="9">9</button></td>
+<td rowspan="4"><button class="calBtn" value="=">=</button></td>
+</tr>
+<tr>
+<td><button class="numBtn" value="4">4</button></td>
+<td><button class="numBtn" value="5">5</button></td>
+<td><button class="numBtn" value="6">6</button></td>
+</tr>
+<tr>
+<td><button class="numBtn" value="1">1</button></td>
+<td><button class="numBtn" value="2">2</button></td>
+<td><button class="numBtn" value="3">3</button></td>
+</tr>
+<tr>
+<td><button class="numBtn" value="0">0</button></td>
+<td><button class="numBtn" value=".">.</button></td>
+<td><button class="clrBtn"  value="c">C</button></td>
+</tr>
+<tr>
+
+</tr>
+</table>
+</div>
+</body>
+</html>
